@@ -20,7 +20,7 @@
         <td><%= follow_request.status %></td>
         <td><%= link_to 'Show', follow_request %></td>
         <td><%= link_to 'Edit', edit_follow_request_path(follow_request) %></td>
-        <td><%= button_to 'Destroy', follow_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', follow_request, method: :delete, data: { turbo_confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

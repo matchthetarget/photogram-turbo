@@ -4,7 +4,7 @@
 
     <% if follow_request %>
       <% if follow_request.pending? %>
-        <%= button_to follow_request, method: :delete, class: "btn btn-outline-secondary"do %>
+        <%= button_to follow_request, method: :delete, class: "btn btn-outline-secondary" do %>
           Un-request
         <% end %>
       <% elsif follow_request.accepted? %>
