@@ -17,15 +17,15 @@
 
       <%= form.hidden_field :photo_id %>
 
-      <div class="form-group">
+      <div class="form-group mb-3">
         <%= form.label :body, class: "visually-hidden" %>
         <%= form.text_area :body, class: "form-control" %>
       </div>
 
-      <div class="actions d-flex justify-content-between">
-        <%= form.submit class: "btn btn-outline-secondary btn-block" %>
+      <div class="actions d-grid gap-2">
+        <%= form.submit class: "btn btn-outline-secondary" %>
         <% if comment.persisted? %>
-          <%= link_to "Cancel", comment.photo %>
+          <%= link_to "Cancel", comment.photo, class: "btn btn-link" %>
         <% end %>
       </div>
     <% end %>

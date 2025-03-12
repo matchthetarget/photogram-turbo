@@ -2,7 +2,7 @@
   <% @users.each do |user| %>
     <li class="list-group-item list-group-item-action">
       <div class="media">
-        <%= image_tag user.avatar_image, class: "mr-3 rounded-circle border", width: 128 %>
+        <%= image_tag user.avatar_image, class: "me-3 rounded-circle border", width: 128 %>
         <div class="media-body">
           <h5 class="mt-0"><%= link_to user.username, user_path(user.username), class: "text-decoration-none stretched-link" %></h5>
           <p><%= user.bio %></p>
