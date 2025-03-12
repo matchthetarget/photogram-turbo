@@ -1,5 +1,9 @@
 <%= turbo_stream_from dom_id(photo) %>
-<%= turbo_frame_tag dom_id(photo), src: photo_path(photo, frame: true), class: "card" do %>
-  <%= render "photos/placeholder" %>
+<%= turbo_frame_tag dom_id(photo) do %>
+  <div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+        <%= render "photos/photo_frame", photo: photo %>
+      </div>
+  </div>
 <% end %>
 

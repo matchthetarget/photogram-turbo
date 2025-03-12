@@ -25,6 +25,7 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       if @like.save
+        format.turbo_stream
         format.html { redirect_back_or_to @like.photo, notice: "Like was successfully created." }
         format.json { render :show, status: :created, location: @like }
       else
@@ -52,6 +53,7 @@ class LikesController < ApplicationController
     @like.destroy!
 
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_back_or_to @like.photo, status: :see_other, notice: "Like was successfully destroyed." }
       format.json { head :no_content }
     end

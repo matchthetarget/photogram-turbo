@@ -1,4 +1,4 @@
-<li id="photo_<%= comment.photo_id %>_comments_form" class="list-group-item">
+<li class="list-group-item">
   <%= turbo_frame_tag dom_id(comment) do %>
     <%= form_with(model: comment) do |form| %>
       <% if comment.errors.any? %>

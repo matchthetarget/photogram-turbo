@@ -27,6 +27,7 @@ class PhotosController < ApplicationController
   # POST /photos or /photos.json
   def create
     @photo = Photo.new(photo_params)
+    @photo.owner = current_user
 
     respond_to do |format|
       if @photo.save
@@ -43,6 +44,7 @@ class PhotosController < ApplicationController
   def update
     respond_to do |format|
       if @photo.update(photo_params)
+        format.turbo_stream
         format.html { redirect_to @photo, notice: "Photo was successfully updated." }
         format.json { render :show, status: :ok, location: @photo }
       else
@@ -57,6 +59,7 @@ class PhotosController < ApplicationController
     @photo.destroy!
 
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_to photos_path, status: :see_other, notice: "Photo was successfully destroyed." }
       format.json { head :no_content }
     end
