@@ -38,5 +38,6 @@ module PhotogramTurbo
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators.helper = false
   end
 end

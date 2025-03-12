@@ -56,3 +56,8 @@ group :development do
   gem "web-console"
 end
 
+gem "devise"
+gem "active_link_to"
+gem "faker"
+gem "strip_attributes"
+gem "validate_url"
