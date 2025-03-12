@@ -42,7 +42,7 @@
         <%= render "comments/comment", comment: comment %>
       <% end %>
       
-      <%= turbo_frame_tag "photo_#{photo.id}_comments_form" do %>
+      <%= turbo_frame_tag dom_id(photo, :comments_form) do %>
         <%= render "comments/form", comment: photo.comments.build %>
       <% end %>
     </ul>

@@ -8,8 +8,8 @@ class CommentsController < ApplicationController
 
   # GET /comments/1 or /comments/1.json
   def show
-    if request.headers["turbo-frame"]
-      render partial: "comment_frame", locals: { comment: @comment }
+    if params[:frame]
+      render partial: "comment_frame", locals: { comment: @comment }, layout: false
     else
       render "show"
     end
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.turbo_stream
+        # format.turbo_stream
         format.html { redirect_back_or_to @comment.photo, notice: "Comment was successfully created." }
         format.json { render :show, status: :created, location: @comment }
       else
