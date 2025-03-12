@@ -8,6 +8,11 @@ class PhotosController < ApplicationController
 
   # GET /photos/1 or /photos/1.json
   def show
+    if request.headers["turbo-frame"]
+      render partial: "photo_frame", locals: { photo: @photo }
+    else
+      render "show"
+    end
   end
 
   # GET /photos/new

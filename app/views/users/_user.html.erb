@@ -99,6 +99,7 @@
 
     <div class="row mb-4">
       <div class="col">
+        <%= turbo_stream_from dom_id(@user, :follow_request) %>
         <%= render "follow_requests/follow_unfollow", sender: current_user, recipient: @user %>
       </div>
     </div>

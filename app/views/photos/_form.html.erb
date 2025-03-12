@@ -1,5 +1,5 @@
-<%= turbo_frame_tag dom_id(photo, :frame), class: "card-body" do %>
-  <%= form_with(model: photo) do |form| %>
+<%= turbo_frame_tag dom_id(photo), class: "card" do %>
+  <%= form_with(model: photo, class: "card-body") do |form| %>
     <% if photo.errors.any? %>
       <div id="error_explanation">
         <ul class="list-unstyled">

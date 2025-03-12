@@ -1,4 +1,4 @@
-<div id="<%= dom_id(photo) %>_likes">
+<%= turbo_frame_tag dom_id(photo, :likes) do %>
   <div class="d-flex align-items-center">
     <%= pluralize(photo.likes_count, "like") %>
 
@@ -14,4 +14,4 @@
       <%= render "likes/form", like: photo.likes.build(fan: current_user) %>
     <% end %>
   </div>
-</div>
+<% end %>

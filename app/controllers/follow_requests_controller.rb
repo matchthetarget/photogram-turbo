@@ -22,6 +22,13 @@ class FollowRequestsController < ApplicationController
   # POST /follow_requests or /follow_requests.json
   def create
     @follow_request = FollowRequest.new(follow_request_params)
+    @follow_request.sender = current_user
+
+    if @follow_request.recipient.private?
+      @follow_request.status = "pending"
+    else
+      @follow_request.status = "accepted"
+    end
 
     respond_to do |format|
       if @follow_request.save
@@ -52,7 +59,7 @@ class FollowRequestsController < ApplicationController
     @follow_request.destroy!
 
     respond_to do |format|
-      format.html { redirect_to follow_requests_path, status: :see_other, notice: "Follow request was successfully destroyed." }
+      format.html { redirect_back_or_to @follow_request.recipient, status: :see_other, notice: "Follow request was successfully destroyed." }
       format.json { head :no_content }
     end
   end
