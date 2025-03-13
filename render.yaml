@@ -1,7 +1,7 @@
 databases:
   - name: photogram-turbo
-    databaseName: photogramturbo
-    user: photogramturbo
+    databaseName: photogram_turbo
+    user: photogram_turbo
     plan: free
 
 services:
