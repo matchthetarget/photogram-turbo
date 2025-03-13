@@ -11,5 +11,5 @@ class Photo < ApplicationRecord
 
   validates :image, presence: true, url: true
 
-  # after_update_commit -> { broadcast_replace_to "photo_#{id}", target: "photo_#{id}", partial: "photos/photo", locals: { photo: self} }
+  after_update_commit -> { broadcast_replace_to "photo_#{id}", target: "photo_#{id}", partial: "photos/placeholder", locals: { photo: self} }
 end
