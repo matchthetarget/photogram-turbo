@@ -1,8 +1,6 @@
 <%= turbo_frame_tag dom_id(photo, :likes) do %>
   <div class="d-flex align-items-center">
-    <%= turbo_frame_tag dom_id(photo, :likes_count) do %>
-      <%= pluralize(photo.likes_count, "like") %>
-    <% end %>
+    <%= render "photos/likes_count", photo: photo %>
 
     <% like = current_user.likes.find_by(photo: photo) %>
 
