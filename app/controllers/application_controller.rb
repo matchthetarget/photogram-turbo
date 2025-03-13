@@ -3,7 +3,12 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   before_action :authenticate_user!
+  before_action :set_user_search, if: -> { current_user.present? }
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def set_user_search
+    @q = User.where.not(id: current_user.id).ransack(params[:q])
+  end
 
   protected
 

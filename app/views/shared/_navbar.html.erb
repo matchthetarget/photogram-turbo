@@ -26,6 +26,16 @@
         <% end %>
       </ul>
 
+      <% if current_user.present? %>
+        <%= search_form_for @q, class: "d-flex", role: "search" do |f| %>
+          <%= f.label :username_cont, class: "visually-hidden" %>
+          <%= f.search_field :username_cont, class:"form-control me-2", placeholder: "Search by username" %>
+          <%= f.button class: "btn btn-outline-success", name: nil, type: "submit" do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        <% end %>
+      <% end %>
+
       <ul class="navbar-nav ms-auto">
         <% if user_signed_in? %>
           <li class="nav-item">

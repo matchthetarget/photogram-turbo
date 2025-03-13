@@ -58,4 +58,9 @@ class User < ApplicationRecord
       self.website = "http://" + self.website
     end
   end
+
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["username"]
+  end
 end

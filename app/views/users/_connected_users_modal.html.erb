@@ -18,7 +18,7 @@
       <ul class="list-group list-group-flush">
         <% connected_users.each do |other_user| %>
           <li class="list-group-item">
-            <%= link_to other_user.username, user_path(other_user.username) %>
+            <%= link_to other_user.username, user_path(other_user.username), data: { turbo: false } %>
           </li>
         <% end %>
       </ul>
