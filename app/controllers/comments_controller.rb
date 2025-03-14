@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   # GET /comments/1 or /comments/1.json
   def show
     if params[:frame]
-      render partial: "comment_frame", locals: { comment: @comment }, layout: false
+      render partial: "comment", locals: { comment: @comment }, layout: false
     else
       render "show"
     end

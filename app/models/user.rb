@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   has_many :feed, through: :leaders, source: :own_photos
 
-  has_many :discover, through: :leaders, source: :liked_photos
+  has_many :discover, -> { distinct }, through: :leaders, source: :liked_photos
 
   validates :username,
     presence: true,
@@ -58,7 +58,6 @@ class User < ApplicationRecord
       self.website = "http://" + self.website
     end
   end
-
 
   def self.ransackable_attributes(auth_object = nil)
     ["username"]

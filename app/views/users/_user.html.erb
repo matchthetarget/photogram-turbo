@@ -53,8 +53,7 @@
         <% end %>
       </div>
 
-      <%# if policy(@user).update? %>
-      <% if @user == current_user %>
+      <% if policy(@user).update? %>
         <div>
           <%=
             link_to "#",
@@ -142,7 +141,7 @@
     target: "#{dom_id(user)}_following"
 %>
 
-<%# if policy(@user).update? %>
+<% if policy(@user).update? %>
   <%=
     render "users/connected_users_modal",
       user: user,
@@ -150,4 +149,4 @@
       description: "pending",
       target: "#{dom_id(user)}_pending"
   %>
-<%# end %>
+<% end %>

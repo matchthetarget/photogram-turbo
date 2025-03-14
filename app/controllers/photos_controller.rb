@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
   # GET /photos/1 or /photos/1.json
   def show
     if params[:frame]
-      render partial: "photo_frame", locals: { photo: @photo }
+      render partial: "photo", locals: { photo: @photo }
     else
       render "show"
     end

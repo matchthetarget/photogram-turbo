@@ -59,6 +59,7 @@ end
 gem "devise"
 gem "active_link_to"
 gem "faker"
+gem "pundit"
 gem "ransack"
 gem "strip_attributes"
 gem "validate_url"

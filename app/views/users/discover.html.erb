@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<% @user.discover.each do |photo| %>
+<% @user.discover.latest.each do |photo| %>
   <% if !photo.owner.private? || @user.leaders.include?(photo.owner) %>
     <%= render "photos/photo", photo: photo %>
   <% end %>

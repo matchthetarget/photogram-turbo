@@ -4,6 +4,6 @@
   </div>
 </div>
 
-<%# if policy(@user).show? %>
-  <%= render "users/photos_tab", user: @user, photos: @user.own_photos %>
-<%# end %>
+<% if policy(@user).show? %>
+  <%= render "users/photos_tab", user: @user, photos: @user.own_photos.latest %>
+<% end %>
