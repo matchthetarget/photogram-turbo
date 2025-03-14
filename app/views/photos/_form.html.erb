@@ -24,10 +24,10 @@
       <%= form.text_area :caption, class: "form-control" %>
     </div>
 
-    <div class="actions d-flex justify-content-between">
+    <div class="actions d-grid gap-2">
       <%= form.submit class: "btn btn-outline-primary btn-block" %>
       <% if photo.persisted? %>
-        <%= link_to "Cancel", photo %>
+        <%= link_to "Cancel", photo, class: "btn btn-link link-underline link-underline-opacity-0 link-underline-opacity-100-hover" %>
       <% end %>
     </div>
   <% end %>
